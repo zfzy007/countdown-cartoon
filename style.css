@@ -1,0 +1,194 @@
+:root {
+    --bg-color: #FFD166; /* Bright yellow */
+    --card-bg: #4ECDC4; /* Bright cyan */
+    --text-color: #000000;
+    --accent-color: #EF476F; /* Bright pink */
+    --border-color: #000000;
+    --border-width: 4px;
+    --shadow-color: #000000;
+    --shadow-offset: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka One', 'Comic Neue', cursive, sans-serif;
+    background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    overflow: hidden;
+    /* Add a subtle polka dot or grid pattern for more cartoon feel */
+    background-image: radial-gradient(#000000 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-color: var(--bg-color);
+}
+
+.background-overlay {
+    display: none; /* Not needed for flat cartoon style */
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    z-index: 1;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.countdown-card {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         4px  4px 0 #000; /* Cartoon text shadow */
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFF;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timer-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+}
+
+.number {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0px #000;
+}
+
+.label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: var(--border-width) dashed var(--border-color);
+}
+
+input {
+    background: #FFF;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+}
+
+input::placeholder {
+    color: #888;
+}
+
+button {
+    background: var(--accent-color);
+    color: #FFF;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    transition: all 0.1s ease;
+    text-shadow: 2px 2px 0px #000;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 0px var(--shadow-color);
+    background: #ff5c85;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    .timer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .number {
+        font-size: 3rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .countdown-card {
+        padding: 1.5rem;
+    }
+    
+    .settings {
+        flex-direction: column;
+    }
+    
+    input, button {
+        width: 100%;
+    }
+}

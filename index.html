@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <main class="container">
+        <section class="countdown-card">
+            <h1 id="title">Countdown to Event</h1>
+            <div class="timer-grid">
+                <div class="timer-item">
+                    <span id="days" class="number">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="timer-item">
+                    <span id="hours" class="number">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="timer-item">
+                    <span id="minutes" class="number">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                    <span id="seconds" class="number">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+            
+            <div class="settings">
+                <input type="text" id="event-name" placeholder="Event Name" maxlength="30">
+                <input type="datetime-local" id="target-date">
+                <button id="set-btn">Set Countdown</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
