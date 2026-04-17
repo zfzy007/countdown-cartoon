@@ -166,29 +166,87 @@ button:active {
     to { opacity: 1; transform: scale(1); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .timer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .timer-item {
+        padding: 1rem 0.5rem;
     }
     
     .number {
         font-size: 3rem;
     }
     
+    .label {
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 16px);
+        /* Prevent shadow from causing horizontal overflow */
+        margin-right: var(--shadow-offset);
+        margin-bottom: var(--shadow-offset);
+    }
+
+    .countdown-card {
+        padding: 1.5rem;
+    }
+
+    .timer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .number {
+        font-size: 2.5rem;
+    }
+    
     h1 {
         font-size: 2rem;
     }
     
-    .countdown-card {
-        padding: 1.5rem;
-    }
-    
     .settings {
         flex-direction: column;
+        gap: 0.8rem;
     }
     
     input, button {
         width: 100%;
+        min-height: 48px; /* Accessible touch targets */
+    }
+}
+
+@media (max-width: 400px) {
+    .countdown-card {
+        padding: 1.2rem;
+    }
+
+    .timer-grid {
+        gap: 0.75rem;
+    }
+    
+    .timer-item {
+        padding: 0.8rem 0.25rem;
+    }
+    
+    .number {
+        font-size: 2rem;
+    }
+    
+    .label {
+        font-size: 0.85rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
